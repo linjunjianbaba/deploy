@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
     spec:
+      imagePullSecrets:
+      - name: dockersecrets
       containers:
       - name: xiaobu-api
         env:
