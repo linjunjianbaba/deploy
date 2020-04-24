@@ -12,7 +12,7 @@ spec:
       labels:
     spec:
       imagePullSecrets:
-      - name: dockersecrets
+        - name: dockersecrets
       containers:
       - name: xiaobu-api
         env:
