@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: xiaobu-adminweb
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+      name: xiaobu-adminweb
+  selector:
+    app: xiaobu-adminweb
