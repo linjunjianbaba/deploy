@@ -1,0 +1,42 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: xiaobu-h5web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+  template:
+    metadata:
+      labels:
+    spec:
+      containers:
+        - name: xiaobu-h5web
+          image: xiaobuh5web
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+          ports:
+            - name: xiaobu-h5web
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+          resources:
+            limits:
+              cpu: "2"
+              memory: 2Gi
+            requests:
+              cpu: "2"
+              memory: 2Gi
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: xiaobuh5web-nginx-config
