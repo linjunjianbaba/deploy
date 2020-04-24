@@ -10,6 +10,8 @@ spec:
     metadata:
       labels:
     spec:
+      imagePullSecrets:
+      - name: dockersecrets
       containers:
         - name: xiaobu-h5web
           image: xiaobuh5web
