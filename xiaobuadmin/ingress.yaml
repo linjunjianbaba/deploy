@@ -10,17 +10,17 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/service-weight: ""
-  name: xiaobu-api
+  name: xiaobu-admin
 spec:
   rules:
-  - host: uat-api.xiaobu.vip
+  - host: uat-admin.xiaobu.vip
     http:
       paths:
       - backend:
-          serviceName: uat-xiaobu-api
+          serviceName: uat-xiaobu-admin
           servicePort: 8080
         path: /
   tls:
   - hosts:
-    - uat-api.xiaobu.vip
-    secretName: xiaobuapi
+    - uat-admin.xiaobu.vip
+    secretName: xiaobu-admin
