@@ -13,7 +13,7 @@ metadata:
   name: xiaobu-adminweb
 spec:
   rules:
-  - host: uat-adminweb.xiaobu.vip
+  - host: qqquat-adminweb.xiaobu.vip
     http:
       paths:
       - backend:
